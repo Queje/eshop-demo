@@ -1,3 +1,6 @@
 module.exports = {
-  poweredByHeader: false
+  poweredByHeader: false,
+  images: {
+    domains: ['celxvpcpbbiagzzycqcz.supabase.co'],
+  },
 };
