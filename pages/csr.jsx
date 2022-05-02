@@ -1,7 +1,6 @@
-import React from 'react';
-import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
-export default withPageAuthRequired(function SSRPage() {
+
+export default function SSRPage() {
   return (
     <>
       <div className="mb-5" data-testid="csr">
@@ -24,4 +23,4 @@ export default withPageAuthRequired(function SSRPage() {
       </div>
     </>
   );
-});
+};

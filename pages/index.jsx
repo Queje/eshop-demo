@@ -1,15 +1,12 @@
-import React from 'react';
-import Hero from '../components/Hero';
-import Content from '../components/Content';
 import { getSupabase } from '../utils/supabase';
-import { Card, CardBody } from 'reactstrap';
 import Image from 'next/image'
 
 export default function Index({ products, categories }) {
   return (
     <>
-      <Hero />
-      <hr />
+      <h1 className="text-3xl font-bold underline">
+        Hello world!
+      </h1>
       <h2>lastest products</h2>
       {categories &&
         categories.map((category) => (
@@ -18,25 +15,23 @@ export default function Index({ products, categories }) {
               {category.name}
             </label>
         ))}
-      <div>
+      <div className='flex'>
       { products &&
         products.map((product) => (
-          <Card key={product.id}>
+          <div key={product.id} className='border-2 border-gray-500 rounded shadow-lg hover:border-gray-600'>
             <Image
               src={product.imageurl}
               alt={product.name}
               width={200}
               height={200}
-              responsive
+              responsive="true"
             />
-            <CardBody >
+            <div>
               {product.name} pour {product.price}€
-            </CardBody>
-          </Card>
+            </div>
+          </div>
       ))}
       </div>
-      <hr/>
-      <Content />
     </>
   );
 }
